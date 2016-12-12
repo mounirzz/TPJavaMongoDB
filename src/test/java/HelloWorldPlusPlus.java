@@ -139,7 +139,6 @@ public class HelloWorldPlusPlus {
         assertTrue(i==1);
     }
 
-
     @Test
     public void testUpdate(){
         BasicDBObject query = new BasicDBObject("borough","Laxou");
@@ -164,8 +163,6 @@ public class HelloWorldPlusPlus {
 
         assertTrue(i==1);
 
-
-
     }
 
     @Test
@@ -183,7 +180,5 @@ public class HelloWorldPlusPlus {
 
         assertTrue(i==0);
     }
-
-
 
 }

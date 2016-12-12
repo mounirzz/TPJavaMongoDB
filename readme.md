@@ -13,6 +13,20 @@ Si vous ne souhaitez pas utiliser le repertoire par défaut il faudra donc utili
 
 Pour ma part j'utilise le répertoire par défaut.
 
+### Installation Windows
+
+1) Crée un dossier C:\data
+2) Crée un dossier C:\data\db
+3) Modifier le Path pour ajouter mongo
+
+Clique-droit sur ordinateur > Modifier les paramètres > Nouveau
+Ajouter le dossier de mongo : C:\Program Files\MongoDB\Server\3.4\bin
+
+Lancer le démon mongo pour permettre à windows d'accèder au serveur:
+> mongod
+
+
+
 
 ## Import des données de tests de MongoDB
 
