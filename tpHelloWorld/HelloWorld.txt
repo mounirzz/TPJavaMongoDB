@@ -1,0 +1,79 @@
+### MongoDB HelloWorld
+
+## Lien pour télécharger et les explications 
+
+https://www.mongodb.com/download-center?jmp=docs
+
+## Pour Windows, suivez bien les instructions, sinon ça ne fonctionnera pas.
+
+## Utilisez la base de Test
+
+> use test
+
+## Ok on va insérer une ligne dans une collection (sorte de "Table" dans un modèle relationnel), elle la créer si elle n'existe pas
+
+> db.personne.insert({"nom": "toto","prenom": "titi","adresse": {"numero": 32,"rue": "Michel Ney ","codePostale": "54300","ville": "Lunéville"},"couleurYeux": "bleu","couleurCheveux": "chatain","voiture": [{"marque": "Renault","modele": "clio"}, {"marque": "Dacia","couleur": "verte"}]})
+
+## La méthode retourne un WriteResult, qui vous donne le statut de l'insertion (ici ok).
+
+## Ok, maintenant on va effectuer une recherche sur les données insérées
+
+> db.personne.find()
+
+## La base vous retourne la ligne insérée précédemment. Si vous en avez plusieurs, la base vous retournera toutes les lignes
+
+## Vous pouvez également ajouter des valeurs, à la manière des conditions "WHERE" en SQL
+
+> db.personne.find({"nom":"toto"})
+
+## Attention i vous tapez une mauvaise commande, par exemple 
+
+> db.personne.find( {"taille":180} ) 
+
+## Mongo ne vous retournera rien, donc faites bien attention à vos requêtes
+
+## Vous remarquez l'_id ? Il est unique et automatiquement généré par Mongo
+
+## On peut effectuer des requêtes sur les tableaux également 
+
+> db.personne.find( { "voiture.marque": "Dacia" } )
+
+## On peut également ajouter des opérateurs au valeurs de recherche
+
+> db.personne.find({"adresse.numero": { $gte : 10} })
+
+## $gte correspond à >. Les autres opérateurs de comparaisons et logique sont disponible dans la documentation officielle.
+
+## Mongo permet également de chercher avec plusieurs paramètres (le ET logique)
+
+> db.personne.find( { "couleurYeux": "bleu", "adresse.numero": 32 } )
+
+## Le OU logique
+
+> db.personne.find( { "couleursYeux": "bleu"}, {"adresse.numero": 32 } )
+
+## Mongo permet également de trier les résultats
+
+> db.personne.find().sort( { "nom": 1, "adresse.numero": 1 } )
+
+## Pour mettre à jour une donnée 
+
+> db.personne.update( { "prenom" : "titi" },{ $set: { "adresse.numero": 13 } })
+
+## Le "nModified" : 1  vous assure que l'élément a bien été modifié
+
+## On peut supprimer une donnée 
+
+> db.personne.remove( { "nom": "toto" } )
+
+## Pour quitter 
+
+> exit
+
+## La doc est bien faite et dispo à l'adresse suivante : https://docs.mongodb.com
+## La doc pour revoir ces commandes et en découvrir de nouvelles : https://docs.mongodb.com/getting-started/shell/
+## Le GitHub de MongoDB : https://github.com/mongodb/mongo
+
+
+
+
