@@ -6,7 +6,7 @@ https://www.mongodb.com/download-center?jmp=docs
 
 ## Pour Windows, suivez bien les instructions, sinon ça ne fonctionnera pas.
 
-## Utilisez la base de Test
+## Utilisez la base de helloWorld
 
 > use helloWorld
 
