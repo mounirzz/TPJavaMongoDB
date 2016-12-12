@@ -8,7 +8,7 @@ https://www.mongodb.com/download-center?jmp=docs
 
 ## Utilisez la base de Test
 
-> use test
+> use helloWorld
 
 ## Ok on va insérer une ligne dans une collection (sorte de "Table" dans un modèle relationnel), elle la créer si elle n'existe pas
 
