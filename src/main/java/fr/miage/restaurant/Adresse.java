@@ -1,5 +1,6 @@
 package fr.miage.restaurant;
 
+import com.mongodb.BasicDBList;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -20,6 +21,40 @@ public class Adresse {
         codepost = d.get("zipcode").toString();
     }
 
+    public Adresse() {}
+
+    public String getBatiment() {
+        return batiment;
+    }
+
+    public void setBatiment(String batiment) {
+        this.batiment = batiment;
+    }
+
+    public ArrayList<Double> getCoordonnees() {
+        return coordonnees;
+    }
+
+    public void setCoordonnees(ArrayList<Double> coordonnees) {
+        this.coordonnees = coordonnees;
+    }
+
+    public String getRue() {
+        return rue;
+    }
+
+    public void setRue(String rue) {
+        this.rue = rue;
+    }
+
+    public String getCodepost() {
+        return codepost;
+    }
+
+    public void setCodepost(String codepost) {
+        this.codepost = codepost;
+    }
+
     @Override
     public String toString() {
         return "Adresse{" +
@@ -28,5 +63,18 @@ public class Adresse {
                 ", rue='" + rue + '\'' +
                 ", codepost='" + codepost + '\'' +
                 '}';
+    }
+
+    public Document toDocument() {
+        Document db = new Document();
+        db.put("building", batiment);
+        BasicDBList dbcoords = new BasicDBList();
+        for (Double d: coordonnees) {
+            dbcoords.add(d);
+        }
+        db.put("coord", dbcoords);
+        db.put("street", rue );
+        db.put("zipcode", codepost);
+        return db;
     }
 }

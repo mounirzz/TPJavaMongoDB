@@ -1,5 +1,6 @@
 package fr.miage.restaurant;
 
+import com.mongodb.BasicDBList;
 import org.bson.Document;
 
 import java.util.ArrayList;
@@ -35,6 +36,52 @@ public class Restaurant {
         }
     }
 
+    public Restaurant(){}
+
+    public Adresse getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(Adresse adresse) {
+        this.adresse = adresse;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public String getCuisine() {
+        return cuisine;
+    }
+
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
+    }
+
+    public List<Notation> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Notation> notes) {
+        this.notes = notes;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setRestaurant_id(int restaurant_id) {
+        this.restaurant_id = restaurant_id;
+    }
+
     @Override
     public String toString() {
         return "Restaurant{" +
@@ -46,5 +93,24 @@ public class Restaurant {
                 ", nom='" + nom + '\'' +
                 ", restaurant_id=" + restaurant_id +
                 '}';
+    }
+
+    public int getRestaurant_id() {
+        return restaurant_id;
+    }
+ 
+    public Document toDocument() {
+        Document db = new Document();
+        db.put("address", adresse.toDocument());
+        db.put("borough", ville );
+        db.put("cuisine", cuisine );
+        BasicDBList dbnotes = new BasicDBList();
+        for (Notation n : notes) {
+            dbnotes.add(n.toDocument());
+        }
+        db.put("grades",dbnotes);
+        db.put("name", nom);
+        db.put("restaurant_id", restaurant_id);
+        return db;
     }
 }

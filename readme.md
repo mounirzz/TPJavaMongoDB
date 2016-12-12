@@ -24,10 +24,12 @@ Récupérer le JSON https://raw.githubusercontent.com/mongodb/docs-assets/primer
 
 Importer les données dans mongo
 
-> mongoimport --db test --collection restaurants --drop --file ~/downloads/primer-dataset.json
+> mongoimport --db test --collection restaurants --drop --file ~/Downloads/primer-dataset.json
 
 ## Sujet de TP
 
-A définir
+Avec la base des Restaurants quelques requète via le mongo shell
+
+Toujours avec la base des Restaurants des tests via Java avec JUnit
 
 
