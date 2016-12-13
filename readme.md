@@ -16,10 +16,12 @@ Pour ma part j'utilise le répertoire par défaut.
 ### Installation Windows
 
 1) Crée un dossier C:\data
+
 2) Crée un dossier C:\data\db
+
 3) Modifier le Path pour ajouter mongo
 
-Clique-droit sur ordinateur > Modifier les paramètres > Nouveau
+Clique-droit sur ordinateur > Modifier les paramètres > Nouveau >
 Ajouter le dossier de mongo : C:\Program Files\MongoDB\Server\3.4\bin
 
 Lancer le démon mongo pour permettre à windows d'accèder au serveur:
@@ -42,7 +44,7 @@ Importer les données dans mongo
 
 ## Sujet de TP
 
-Avec la base des Restaurants quelques requète via le mongo shell
+Quelques requètes via le mongo shell
 
 Toujours avec la base des Restaurants des tests via Java avec JUnit
 
