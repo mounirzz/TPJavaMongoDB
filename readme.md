@@ -40,7 +40,7 @@ Récupérer le JSON https://raw.githubusercontent.com/mongodb/docs-assets/primer
 
 Importer les données dans mongo
 
-> mongoimport --db test --collection restaurants --drop --file ~/Downloads/primer-dataset.json
+> mongoimport --db test --collection restaurants --drop --file $YOUR_DIRECTORY_TO_DOWNLOAD/primer-dataset.json
 
 ## Sujet de TP
 
